@@ -8,12 +8,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <header class="navbar">
+  <!-- Nav Bar -->
+<header class="navbar">
   <div class="container">
+    <!-- Logo -->
     <a class="navbar-brand" href="#">
       <img src="tl-logos/example-Trueline-logo.png" alt="TRUELINE Reticulation" />
     </a>
-    <nav class="nav-links">
+
+    <!-- Hamburger Icon (visible on mobile) -->
+    <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <nav id="navMenu" class="nav-links">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -49,8 +60,14 @@
   </section>
 
   <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
+  <div class="container">
+    <h2>
+      <button id="toggleContactForm" class="toggle-button">
+        Contact Us
+      </button>
+    </h2>
+    
+    <div id="contactFormContainer" class="form-container hidden">
       <form>
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
@@ -58,13 +75,16 @@
         <button type="submit">Send Message</button>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 TRUELINE LTD. All rights reserved.</p> <br/>
-      <p class="mwv">Website Designed & Maintained by M.W.V LTD</p>
+      <p class="mwv">Website Designed & Maintained by Mind Wave Ventures LTD</p>
     </div>
   </footer>
+  <!-- scripts -->
+   <script src="app.js"></script>
 </body>
 </html>

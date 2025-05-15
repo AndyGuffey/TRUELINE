@@ -6,32 +6,32 @@ body {
   background-color: #f9f9f9;
   color: #333;
 }
+
 /* Container setup */
 .navbar .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 10px 20px;
 }
 
 /* Logo styling */
 .navbar-brand img {
   height: 45px;
-  width: auto; /* Adjust height as needed */
+  width: auto;
 }
 
 /* Navigation links styling */
 .nav-links {
   display: flex;
-  gap: 20px; /* Space between links */
+  gap: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #000; /* Adjust color as needed */
+  color: #000;
   font-weight: bold;
 }
-
 
 .nav-links a:hover {
   color: #1d88c6;
@@ -107,6 +107,21 @@ body {
   background-color: #1d88c6;
 }
 
+/* Contact Form Toggle */
+.form-container {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.form-container.hidden {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
 /* Footer */
 .footer {
   background-color: #1e1e2f;
@@ -115,8 +130,109 @@ body {
   padding: 1rem 0;
   margin-top: 2rem;
 }
-.mwv{
+
+.mwv {
   font-size: 0.8rem;
   margin-top: 1rem;
   color: #1d88c6;
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animate Hamburger to X */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Nav links hidden by default on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 1rem 0;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+  }
+
+  /* When open, show the nav */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2rem;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* Slide-in Mobile Nav Menu */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: #f9f9f9;
+    padding-top: 80px;
+    padding-left: 1.5rem;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+}
+
+/* Make navbar sticky  */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+  background-color: #fff; /* You might want to set the background color to make sure the navbar is visible */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for better visibility */
+}
+
+/* Optional: Make sure the container inside navbar does not overlap content */
+.navbar .container {
+  padding: 10px 20px; /* Adjust padding as needed */
 }
