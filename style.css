@@ -17,7 +17,7 @@ body {
 
 /* Logo styling */
 .navbar-brand img {
-  height: 45px;
+  height: 75px;
   width: auto;
 }
 
@@ -135,6 +135,25 @@ body {
   font-size: 0.8rem;
   margin-top: 1rem;
   color: #1d88c6;
+}
+
+/* MWV Branding */
+.footer-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mwv-logo {
+  height: 60px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.mwv-logo:hover {
+  opacity: 1;
 }
 
 /* Hamburger Icon Styling */
