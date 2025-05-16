@@ -39,7 +39,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background-color: #1d88c6;
+  background-color: #1e1e2f;
   color: white;
   text-align: center;
   padding: 4rem 1rem;
@@ -96,9 +96,9 @@ body {
 .contact button {
   background-color: #1e1e2f;
   color: white;
-  padding: 0.75rem;
+  padding: 0.95rem;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 0.35rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
